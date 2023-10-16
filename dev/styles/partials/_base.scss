@@ -1,0 +1,155 @@
+@import "../core";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  // Set global fonts here
+}
+
+* {
+  position: relative;
+}
+
+html {
+  font-size: 10px;
+  background-color: $bgColor;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Comforta, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #EAEEF4;
+}
+
+section {
+  overflow: hidden;
+  z-index: 1;
+  padding: 6rem 0;
+  background-color: inherit;
+}
+
+main {
+  flex: 1;
+
+  @include minw($sm-pc) {
+    margin-top: 0;
+  }
+}
+
+
+//===========================
+// Helpers
+//===========================
+
+
+.tac {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+//===========================
+// Grids
+//===========================
+
+[class*="grid"]+[class*="grid"] {
+  margin-top: rem($gridPadding);
+}
+
+
+
+
+.spacer {
+  height: 1rem;
+  display: block;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--bg-image) no-repeat center center;
+    position: absolute;
+    background-size: cover;
+  }
+
+  &:before {
+    filter: blur(3rem);
+    transform: scale(1.15);
+  }
+
+  &:after {
+    max-width: 192rem;
+  }
+
+  div {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, .4);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
+  }
+
+  &-top {
+
+    &:before,
+    &:after {
+      background-position: top center;
+    }
+  }
+
+  &-bottom {
+
+    &:before,
+    &:after {
+      background-position: bottom center;
+    }
+  }
+}
+
+@include minw($sm-pc) {
+  .flex-2 {
+    display: flex;
+    align-items: center;
+
+    &>div {
+      flex: 1;
+    }
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 320px;
+  width: 100%;
+  padding: 0 5px;
+
+  @include minw($lgg) {
+    max-width: 1280px;
+    padding: 0 10px;
+
+  }
+}

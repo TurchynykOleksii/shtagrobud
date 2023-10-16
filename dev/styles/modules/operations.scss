@@ -1,0 +1,94 @@
+@import "../core";
+
+// @include minw($tablet) {
+
+// }
+// @include minw($lg) {
+
+// }
+
+.operations {
+  background-color: #171717;
+  padding: 50px 0;
+
+  @include minw($lgg) {
+    padding: 100px 0;
+  }
+
+  &__headline {
+    margin-bottom: 35px;
+    font-size: 3.2rem;
+    color: $bgColor;
+    text-align: center;
+
+    @include minw($lgg) {
+      max-width: 1120px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 70px;
+      font-size: 48px;
+      text-align: left;
+    }
+
+    span {
+      color: $bgColor;
+      font-size: 3.2rem;
+
+      @include minw($lgg) {
+        max-width: 930px;
+        display: block;
+        margin-left: auto;
+        font-size: 48px;
+
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+    @include minw($lgg) {
+      margin-bottom: 70px;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    padding: 10px 30px;
+    color: $bgColor;
+    font-size: 20px;
+
+    @include minw($lgg) {
+      padding: 15px 60px;
+
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-top: 1px solid rgba($color: $bgColor, $alpha: 0.2);
+      border-bottom: 1px solid rgba($color: $bgColor, $alpha: 0.2);
+
+      @include minw($lgg) {
+        border-left: 1px solid rgba($color: $bgColor, $alpha: 0.2);
+        border-right: 1px solid rgba($color: $bgColor, $alpha: 0.2);
+        border-top: none;
+        border-bottom: none;
+      }
+    }
+
+  }
+
+  &__text {
+    color: $bgColor;
+    font-size: 16px;
+    text-align: center;
+
+    @include minw($lgg) {
+      font-size: 24px;
+    }
+  }
+}

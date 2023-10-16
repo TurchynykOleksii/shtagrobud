@@ -1,0 +1,103 @@
+@import "../core";
+
+.benefits {
+  padding: 50px 0;
+
+  @include minw($lgg) {
+    padding: 100px 0;
+  }
+
+  &__inner-text {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    @include minw($lgg) {
+      margin-bottom: 50px;
+
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__headline {
+    font-size: 3.2rem;
+    text-align: center;
+
+    @include minw($lgg) {
+      max-width: 662px;
+      font-size: 48px;
+      text-align: left;
+    }
+  }
+
+  &__slogan {
+    padding-bottom: 20px;
+    position: relative;
+
+    @include minw($lgg) {
+
+      max-width: 400px;
+      font-size: 18px;
+      padding-bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 150px;
+      height: 2px;
+      background-color: black;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+
+  }
+
+  &__item {
+    padding: 20px 45px;
+    max-width: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #D9DEE4;
+
+    @include minw($lgg) {
+      padding: 60px 20px;
+      max-width: 450px;
+      width: 100%;
+
+      border-radius: 15px;
+    }
+
+    img {
+      margin-bottom: 20px;
+      width: 100px;
+      height: 100px;
+
+      @include minw($lgg) {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+
+      @include minw($lgg) {
+        font-size: 24px;
+      }
+
+    }
+  }
+}

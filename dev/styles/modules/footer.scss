@@ -1,0 +1,134 @@
+@import "../core";
+
+.footer {
+	background-color: $black;
+	padding-top: 20px;
+	padding-bottom: 0;
+
+	@include minw($lgg) {
+		padding-top: 40px;
+	}
+
+
+	&__main {
+		padding-bottom: 30px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: 10px;
+
+		@include minw($lgg) {
+			gap: 0;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+
+	&__logo-text {
+		color: $bgColor;
+
+		@include minw($lgg) {
+			max-width: 400px;
+		}
+
+
+		* {
+			color: inherit;
+		}
+	}
+
+	&__logo {
+		display: block;
+		margin-bottom: 15px;
+		font-size: 24px;
+		text-decoration: none;
+		text-align: center;
+
+		@include minw($lgg) {
+			margin-bottom: 30px;
+			font-size: 36px;
+			display: inline-block;
+			text-align: left;
+		}
+	}
+
+	&__slogan {
+		font-size: 14px;
+		line-height: 1.3;
+		text-align: center;
+
+		@include minw($lgg) {
+			font-size: 24px;
+			text-align: left;
+		}
+	}
+
+	&__list {
+		display: none;
+
+		@include minw($lgg) {
+			max-width: 280px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+	}
+
+	&__item {
+		color: $bgColor;
+
+		a {
+			color: inherit;
+			font-size: 18px;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: color 250ms ease;
+
+			&:hover {
+				color: $accentColor;
+			}
+		}
+
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		justify-content: center;
+
+
+
+
+		a {
+			display: flex;
+			gap: 5px;
+			align-items: center;
+			text-decoration: none;
+
+			&:hover {
+
+				span {
+					color: $accentColor;
+				}
+
+				svg {
+					fill: $accentColor;
+				}
+			}
+		}
+
+
+		svg {
+			flex-shrink: 0;
+			fill: $bgColor;
+			transition: fill 250ms ease;
+		}
+
+		span {
+			color: $bgColor;
+			transition: color 250ms ease;
+		}
+	}
+
+}

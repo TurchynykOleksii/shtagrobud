@@ -1,0 +1,78 @@
+@import "../core";
+
+.advice {
+  &__inner {
+    padding: 30px 20px;
+    background-color: $bgColor;
+    border-radius: 20px;
+
+    @include minw($lgg) {
+      padding: 60px 40px;
+
+      border-radius: 30px;
+    }
+  }
+
+  &__headline {
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include minw($lgg) {
+      font-size: 48px;
+      margin-bottom: 40px;
+      text-align-last: left;
+    }
+  }
+
+  &__list {
+    padding-left: 30px;
+  }
+
+  &__list-photo {
+    max-width: 530px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  &__item-photo {
+    overflow: hidden;
+    border-radius: 15px;
+    max-width: 120px;
+    max-height: 120px;
+
+    @include minw($lgg) {
+      max-width: 250px;
+      max-height: 250px;
+    }
+
+    img {
+      width: 120px;
+
+      @include minw($lgg) {
+        width: 250px;
+      }
+    }
+  }
+
+  &__wrapper-lists {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+
+    gap: 40px;
+  }
+
+  &__item {
+    font-size: 16px;
+    list-style-type: disc;
+
+    @include minw($lgg) {
+
+      font-size: 24px;
+    }
+  }
+}

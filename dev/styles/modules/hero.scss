@@ -1,0 +1,137 @@
+@import "../core";
+
+.hero {
+  padding-top: 50px;
+
+  @include minw($lgg) {
+    padding-top: 100px;
+  }
+
+  &__inner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @include minw($lgg) {
+      margin-bottom: 60px;
+      flex-direction: row;
+      align-items: end;
+    }
+  }
+
+  &__headline {
+    text-align: center;
+    font-size: 3.2rem;
+
+    @include minw($lgg) {
+      max-width: 685px;
+      font-size: 48px;
+      text-align: left;
+    }
+  }
+
+  &__slide-item {
+    img {
+      width: 300px;
+      height: 240px;
+    }
+
+    @include minw($lgg) {
+      img {
+        width: 1170px;
+        height: 768px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 300px;
+    margin-bottom: 25px;
+    font-size: 18px;
+
+    @include minw($lgg) {
+      font-size: 20px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    font-size: 20px;
+    color: $bgColor;
+    background-color: $accentColor;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 250ms ease;
+
+    &:hover {
+      background-color: #ff9100;
+    }
+
+  }
+
+  &__slider {
+    max-width: 300px;
+    border-radius: 20px;
+    position: relative;
+
+    @include minw($lgg) {
+      max-width: 1170px;
+
+      border-radius: 50px;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+
+    @include minw($lgg) {
+      right: 50px;
+      bottom: 50px;
+      gap: 20px;
+    }
+  }
+
+  &__prev,
+  &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba($color: $bgColor, $alpha: 0.5);
+    transition: background-color 250ms ease;
+
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 20px;
+    }
+
+    @include minw($lgg) {
+      width: 100px;
+      height: 100px;
+
+
+      img {
+        width: 50px;
+      }
+
+      &:hover {
+        background-color: rgba($color: $bgColor, $alpha: 1.0);
+        cursor: pointer;
+      }
+    }
+  }
+}
